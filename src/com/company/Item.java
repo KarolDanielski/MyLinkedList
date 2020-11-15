@@ -15,7 +15,7 @@ public abstract class Item {
             return 0;
         }
         else if (((String)(this.currentItemValue)).compareTo((String)(item.getCurrentItemValue())) > 0) {
-            return 1; //"bigger", go left
+            return 1; //"bigger", go leftb
         } else {
             return -1; //"smaller" go right
         }
