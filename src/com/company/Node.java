@@ -5,8 +5,5 @@ public class Node extends Item{
         super(currentItemValue);
     }
 
-    @Override
-    public int compareTo(Item item) {
-        return super.compareTo(item);
-    }
+
 }
