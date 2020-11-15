@@ -8,6 +8,8 @@ public abstract class Item {
 
     public Item(Object currentItemValue) {
         this.currentItemValue = currentItemValue;
+        this.previousItem = null;
+        this.nextItem = null;
     }
 
     public int compareTo(Item item) {
