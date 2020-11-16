@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String a = "a";
-        String b = "b";
-        String c = "c";
+        //----------TEST CODE----------
+//      ----------Integer data type---------
+        MyList<Integer> integerList = new OrderedLinkedList<>();
 
         Integer eins = 1;
         Integer zwei = 2;
@@ -15,8 +15,6 @@ public class Main {
         Integer funf = 5;
         Integer noEins = -1;
         Integer zero = 0;
-
-        MyList<Integer> integerList = new OrderedLinkedList<>();
 
         integerList.addItem(funf);
         integerList.addItem(vier);
@@ -30,7 +28,19 @@ public class Main {
 
         integerList.printMyList();
 
+        System.out.println("Found item: ");
+        System.out.println(integerList.findItem(drei));
+
+        integerList.removeItem(vier);
+        integerList.printMyList();
+        integerList.addItem(vier);
+        integerList.printMyList();
+//      ----------String data type----------
         MyList<String> stringList = new OrderedLinkedList<>();
+
+        String a = "a";
+        String b = "b";
+        String c = "c";
 
         stringList.addItem(b);
         stringList.addItem(a);
@@ -38,16 +48,8 @@ public class Main {
 
         stringList.removeItem(a);
         stringList.printMyList();
-        integerList.removeItem(vier);
-        integerList.printMyList();
-        integerList.addItem(vier);
-        integerList.printMyList();
 
-
-
+        System.out.println("Found item: ");
+        System.out.println(stringList.findItem(a));
     }
-
-
-
-
 }

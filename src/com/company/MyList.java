@@ -6,6 +6,4 @@ public interface MyList<T extends Object> {
     void removeItem(T itemToRemove);
     Item findItem(T itemToFind);
     void printMyList();
-
-
 }

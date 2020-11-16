@@ -38,9 +38,7 @@ public class OrderedLinkedList<T extends Object> implements MyList<T>{
 //                System.out.println("itemFromList.setPreviousItem(newNode) = " + itemFromList.getPreviousItem() );
 //                System.out.println("itemFromList: " + itemFromList + " newNode: " + newNode );
 //                System.out.println("");
-
                 break;
-
             }
             else if (itemFromList.getNextItem() == null) { //umieść na końcu
 //                System.out.println(newNode + " goes to the end");
@@ -52,9 +50,7 @@ public class OrderedLinkedList<T extends Object> implements MyList<T>{
             itemFromList = itemFromList.getNextItem();
             }
         }
-
-
-        }
+    }
 
     @Override
     public void removeItem(T itemToRemove) {
