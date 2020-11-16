@@ -4,33 +4,39 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String one = "b";
-        String two = "c";
-        String three = "a";
+        String a = "a";
+        String b = "b";
+        String c = "c";
 
         Integer eins = 1;
         Integer zwei = 2;
         Integer drei = 3;
         Integer vier = 4;
         Integer funf = 5;
+        Integer noEins = -1;
+        Integer zero = 0;
 
-        MyList<Integer> newList = new OrderedLinkedList<>();
+        MyList<Integer> integerList = new OrderedLinkedList<>();
 
-//        newList.addItem(one);
-//        newList.addItem(new Node(two));
-//        newList.addItem(new Node(three));
-//        newList.addItem(new Node(on));
-        newList.addItem(funf);
-        newList.addItem(vier);
-        newList.addItem(drei);
-        newList.addItem(zwei);
-        newList.addItem(eins);
-        newList.addItem(drei);
+        integerList.addItem(funf);
+        integerList.addItem(vier);
+        integerList.addItem(drei);
+        integerList.addItem(zwei);
+        integerList.addItem(eins);
+        integerList.addItem(noEins);
+        integerList.addItem(drei);
+        integerList.addItem(vier);
+        integerList.addItem(zero);
 
-        newList.addItem(vier);
-//
-        newList.printMyList();
+        integerList.printMyList();
 
+        MyList<String> stringList = new OrderedLinkedList<>();
+
+        stringList.addItem(b);
+        stringList.addItem(a);
+        stringList.addItem(c);
+
+        stringList.printMyList();
 
     }
 
