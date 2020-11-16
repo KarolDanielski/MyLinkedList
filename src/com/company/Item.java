@@ -13,10 +13,10 @@ public abstract class Item {
     }
 
     public int compareTo(Item item) {
-        if (((String)(this.currentItemValue)).compareTo((String)(item.getCurrentItemValue())) == 0) {
+        if (((this.currentItemValue).toString()).compareTo((item.getCurrentItemValue()).toString()) == 0) {
             return 0;
         }
-        else if (((String)(this.currentItemValue)).compareTo((String)(item.getCurrentItemValue())) > 0) {
+        else if (((this.currentItemValue).toString()).compareTo((item.getCurrentItemValue()).toString()) > 0) {
             return 1; //"bigger", go leftb
         } else {
             return -1; //"smaller" go right
@@ -25,9 +25,7 @@ public abstract class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "currentItemValue=" + currentItemValue +
-                '}';
+        return "" + this.currentItemValue + "";
     }
 
     public Item getPreviousItem() {
