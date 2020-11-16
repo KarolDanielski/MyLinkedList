@@ -22,12 +22,12 @@ public class Main {
 //        newList.addItem(new Node(on));
         newList.addItem(funf);
         newList.addItem(vier);
-//        newList.addItem(drei);
+        newList.addItem(drei);
         newList.addItem(zwei);
         newList.addItem(eins);
         newList.addItem(drei);
 
-//        newList.addItem(vier);
+        newList.addItem(vier);
 //
         newList.printMyList();
 

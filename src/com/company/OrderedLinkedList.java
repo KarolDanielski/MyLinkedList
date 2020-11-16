@@ -19,6 +19,7 @@ public class OrderedLinkedList<T extends Object> implements MyList<T>{
             comparisonResult = itemFromList.compareTo(newNode);
             if (comparisonResult == 0 ) {
                 System.out.println("Item already on the list.");
+                break;
             }
             else if (comparisonResult > 0) {
                 System.out.println(newNode + " goes higher than "  + itemFromList);
