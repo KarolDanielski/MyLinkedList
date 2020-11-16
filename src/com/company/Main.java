@@ -36,7 +36,14 @@ public class Main {
         stringList.addItem(a);
         stringList.addItem(c);
 
+        stringList.removeItem(a);
         stringList.printMyList();
+        integerList.removeItem(vier);
+        integerList.printMyList();
+        integerList.addItem(vier);
+        integerList.printMyList();
+
+
 
     }
 

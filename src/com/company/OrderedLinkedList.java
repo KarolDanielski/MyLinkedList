@@ -22,28 +22,28 @@ public class OrderedLinkedList<T extends Object> implements MyList<T>{
                 break;
             }
             else if (comparisonResult > 0) {
-                System.out.println(newNode + " goes higher than "  + itemFromList);
+//                System.out.println(newNode + " goes higher than "  + itemFromList);
                 if (itemFromList.getPreviousItem() == null) {
                     this.root = newNode;
-                    System.out.println("Setting root to: " + newNode);
+//                    System.out.println("Setting root to: " + newNode);
                 }
                 newNode.setNextItem(itemFromList);
-                System.out.println("newNode.setNextItem(itemFromList) = " + newNode.getNextItem());
+//                System.out.println("newNode.setNextItem(itemFromList) = " + newNode.getNextItem());
                 newNode.setPreviousItem(itemFromList.getPreviousItem());
-                System.out.println("newNode.setPreviousItem(itemFromList.getPreviousItem()) = " + newNode.getPreviousItem());
+//                System.out.println("newNode.setPreviousItem(itemFromList.getPreviousItem()) = " + newNode.getPreviousItem());
                 if (itemFromList.getPreviousItem() != null) {
                     itemFromList.getPreviousItem().setNextItem(newNode);
                 }
                 itemFromList.setPreviousItem(newNode);
-                System.out.println("itemFromList.setPreviousItem(newNode) = " + itemFromList.getPreviousItem() );
-                System.out.println("itemFromList: " + itemFromList + " newNode: " + newNode );
-                System.out.println("");
+//                System.out.println("itemFromList.setPreviousItem(newNode) = " + itemFromList.getPreviousItem() );
+//                System.out.println("itemFromList: " + itemFromList + " newNode: " + newNode );
+//                System.out.println("");
 
                 break;
 
             }
             else if (itemFromList.getNextItem() == null) { //umieść na końcu
-                System.out.println(newNode + " goes to the end");
+//                System.out.println(newNode + " goes to the end");
                 newNode.setPreviousItem(itemFromList);
                 newNode.setNextItem(itemFromList.getNextItem());
                 itemFromList.setNextItem(newNode);
@@ -57,12 +57,43 @@ public class OrderedLinkedList<T extends Object> implements MyList<T>{
         }
 
     @Override
-    public void removeItem(Item item) {
+    public void removeItem(T itemToRemove) {
+        Item nodeToRemove = new Node(itemToRemove);
+        Item currentNode = this.root;
+        int comparison;
 
+        while (currentNode != null) {
+            comparison = currentNode.compareTo(nodeToRemove);
+            if (comparison == 0) {
+                if (currentNode.getPreviousItem() != null) {
+                    currentNode.getPreviousItem().setNextItem(currentNode.getNextItem());
+                }
+                else if (currentNode.getPreviousItem() == null) {
+                    this.root = currentNode.getNextItem();
+                }
+                if (currentNode.getNextItem() != null) {
+                    currentNode.getNextItem().setPreviousItem(currentNode.getPreviousItem());
+                }
+
+                System.out.println("Removed " + nodeToRemove );
+            }
+            currentNode = currentNode.getNextItem();
+        }
     }
 
     @Override
-    public Item findItem() {
+    public Item findItem(T itemToFind) {
+        Item nodeToFind = new Node(itemToFind);
+        Item currentNode = this.root;
+        int comparison;
+
+        while (currentNode != null) {
+            comparison = currentNode.compareTo(nodeToFind);
+            if (comparison == 0) {
+                return currentNode;
+            }
+            currentNode = currentNode.getNextItem();
+        }
         return null;
     }
     @Override

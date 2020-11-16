@@ -47,8 +47,4 @@ public abstract class Item {
     public Object getCurrentItemValue() {
         return currentItemValue;
     }
-
-    public void setCurrentItemValue(Object currentItemValue) {
-        this.currentItemValue = currentItemValue;
-    }
 }
